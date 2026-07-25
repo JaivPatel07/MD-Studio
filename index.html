@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Studio — Markdown Notes</title>
+<meta name="description" content="A simple and private Markdown editor in your browser. Write, convert, and manage notes from .md, .docx, and .pdf files. All data stays on your device.">
+<meta name="theme-color" content="#FFFFFF">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MD Studio — Markdown Notes">
+<meta property="og:description" content="A simple and private Markdown editor in your browser. Write, convert, and manage notes from .md, .docx, and .pdf files.">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="MD Studio — Markdown Notes">
+<meta property="twitter:description" content="A simple and private Markdown editor in your browser. Write, convert, and manage notes from .md, .docx, and .pdf files.">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turndown/7.1.2/turndown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  if (window['pdfjsLib']) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hljs-light-theme">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" id="hljs-dark-theme" disabled>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192x192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+<div id="app">
+
+  <header>
+    <div class="brand">
+      <button id="sidebarToggle" aria-label="Toggle file list">☰</button>
+      <span class="mark" aria-hidden="true"></span>
+      <h1>MD Studio<em>write, convert, keep</em></h1>
+    </div>
+    <div class="top-actions">
+      <button id="newBtn" class="btn"><span class="btn-label">New</span> +</button>
+      <button id="uploadBtn" class="btn"><span class="btn-label">Import</span> ↑</button>
+      <button id="downloadBtn" class="btn"><span class="btn-label">Export</span> ↓</button>
+      <input type="file" id="fileInput" accept=".md,.markdown,.txt,.docx,.pdf" multiple>
+      <button id="themeToggle" aria-label="Toggle theme">Light</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="scrim" id="scrim"></div>
+    <aside id="sidebar">
+      <div class="sidebar-head">
+        <input type="search" id="searchInput" placeholder="Search notes…">
+        <span id="fileCount"></span>
+      </div>
+      <div id="fileList"></div>
+    </aside>
+
+    <div id="workspace">
+      <div id="welcome">
+        <div class="dots" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <h2>Nothing open yet.</h2>
+        <p>Start a new note, or import a .md, .docx, or .pdf file — it'll be converted to markdown automatically. Everything saves here automatically.</p>
+        <button id="welcomeNew" class="btn btn-primary">New note +</button>
+      </div>
+
+      <div id="editorArea" style="display:none; flex:1; flex-direction:column; min-height:0;">
+        <div class="ws-head">
+          <input id="titleInput" placeholder="Untitled note" autocomplete="off">
+          <div class="view-toggle">
+            <button id="viewSplit" class="on">split</button>
+            <button id="viewEdit">edit</button>
+            <button id="viewPreview">preview</button>
+          </div>
+          <span class="save-state" id="saveState">saved</span>
+        </div>
+        <div class="panes">
+          <div id="editorPane"><textarea id="mdInput" placeholder="# Start writing…" spellcheck="false"></textarea></div>
+          <div id="previewPane"><div class="prose" id="previewOut"></div></div>
+        </div>
+        <div class="ws-foot">
+          <span id="noteStats"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="dist/bundle.js"></script>
+
+<div id="toastContainer"></div>
+</body>
+</html>

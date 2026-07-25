@@ -57,7 +57,7 @@ To run this project locally:
     npm run dev
     ```
 
-4.  **Open `markdown-notes.html` in your browser** to see the application running.
+4.  **Open `index.html` in your browser** to see the application running.
 
 ### Building for Production
 
