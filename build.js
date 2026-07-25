@@ -3,12 +3,11 @@ const { execSync } = require('child_process');
 
 const distFolder = 'dist';
 
-// List of files and folders to copy to the dist folder
 const filesToCopy = [
   'index.html',
   'style.css',
   'manifest.json',
-  'README.md' // Good to have in the deployment
+  'README.md'
 ];
 
 async function build() {
@@ -17,14 +16,21 @@ async function build() {
     await fs.emptyDir(distFolder);
 
     console.log('Running esbuild...');
-    execSync('esbuild main.js --bundle --minify --outfile=dist/bundle.js', { stdio: 'inherit' });
+    execSync('esbuild main.js --bundle --minify --outfile=dist/bundle.js', {
+      stdio: 'inherit',
+    });
 
     console.log('Copying static assets...');
-    await Promise.all(filesToCopy.map(file => fs.copy(file, `${distFolder}/${file}`)));
+
+    for (const file of filesToCopy) {
+      console.log(`Copying ${file}...`);
+      await fs.copy(file, `${distFolder}/${file}`);
+      console.log(`✓ ${file}`);
+    }
 
     console.log('Build successful!');
   } catch (err) {
-    console.error('Build failed:', err);
+    console.error(err);
     process.exit(1);
   }
 }
