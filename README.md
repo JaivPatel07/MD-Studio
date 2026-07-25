@@ -2,7 +2,7 @@
 
 A simple, private, and powerful Markdown editor that lives in your browser. Write, convert, and manage notes from `.md`, `.docx`, and `.pdf` files with ease. All your data stays on your device.
 
-**[Live Demo URL]** &lt;-- *Replace with your actual GitHub Pages URL*
+**[[Live Demo URL]](https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/)**https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/
 
 !MD Studio Screenshot
 *Replace the placeholder above with a screenshot of your application.*
