@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A simple Markdown workspace for creating, editing, and converting documents with ease.",
   "scripts": {
-    "build": "esbuild src/main.js --bundle --minify --outfile=dist/bundle.js",
-    "dev": "esbuild src/main.js --bundle --outfile=dist/bundle.js --watch"
+    "build": "esbuild main.js --bundle --minify --outfile=dist/bundle.js",
+    "dev": "esbuild main.js --bundle --outfile=dist/bundle.js --watch"
   },
   "devDependencies": {
     "esbuild": "^0.20.0"

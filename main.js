@@ -54,7 +54,9 @@ function initialize() {
   dom.viewEdit.addEventListener('click', ()=>setView('edit'));
   dom.viewPreview.addEventListener('click', ()=>setView('preview'));
 
-  dom.sidebarToggle.addEventListener('click', ()=>{ dom.sidebar.classList.add('open'); dom.scrim.classList.add('show'); });
+  if (dom.sidebarToggle) {
+    dom.sidebarToggle.addEventListener('click', ()=>{ dom.sidebar.classList.add('open'); dom.scrim.classList.add('show'); });
+  }
   dom.scrim.addEventListener('click', closeSidebarMobile);
 
   // --- Load data and setup ---
