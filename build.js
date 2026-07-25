@@ -8,7 +8,6 @@ const filesToCopy = [
   'index.html',
   'style.css',
   'manifest.json',
-  'icons', // This will copy the entire icons folder
   'README.md' // Good to have in the deployment
 ];
 
