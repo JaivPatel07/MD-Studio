@@ -1,7 +1,7 @@
 import * as dom from './dom.js';
 import { state, STORAGE_KEY } from './state.js';
 import { uid } from './utils.js';
-import { render, renderPreview, updateNoteStats, setSaveState } from './ui.js';
+import { render, renderPreview, updateNoteStats, setSaveState, showToast } from './ui.js';
 
 export function openFile(id){
   state.activeId = id;
@@ -43,35 +43,37 @@ export function scheduleSave(){
   setSaveState('saving');
   state.isDirty = true;
   clearTimeout(state.saveTimer);
-  state.saveTimer = setTimeout(async ()=>{
+  state.saveTimer = setTimeout(()=>{
     const f = state.activeFile;
     if (f){
       f.name = dom.titleInput.value.trim() || 'Untitled';
       f.content = dom.mdInput.value;
       f.updatedAt = Date.now();
-      await persist();
+      persist();
       updateNoteStats();
       render();
     }
   }, 400);
 }
 
-export async function persist(){
+export function persist(){
   try{
-    // Using a generic storage API; assuming it's available on `window`
-    await window.storage.set(STORAGE_KEY, JSON.stringify(state.files), false);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.files));
     setSaveState('saved');
     state.isDirty = false;
   }catch(e){
     console.error('Storage error', e);
     setSaveState('error');
+    showToast('Could not save notes. Storage might be full.', 'error');
   }
 }
 
-export async function load(){
+export function load(){
   try{
-    const res = await window.storage.get(STORAGE_KEY, false);
-    state.files = res && res.value ? JSON.parse(res.value) : [];
+    const storedFiles = localStorage.getItem(STORAGE_KEY);
+    if (storedFiles) {
+      state.files = JSON.parse(storedFiles);
+    }
   }catch(e){
     state.files = [];
   }

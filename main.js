@@ -43,10 +43,11 @@ function initialize() {
   dom.themeToggle.addEventListener('click', ()=>{
     const cur = document.body.getAttribute('data-theme');
     document.body.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
-    const isDark = cur === 'light'; // If current is light, new will be dark
-    dom.themeToggle.textContent = isDark ? 'Dark' : 'Light';
+    const isDark = document.body.getAttribute('data-theme') === 'dark';
     dom.hljsLightTheme.disabled = isDark;
     dom.hljsDarkTheme.disabled = !isDark;
+    dom.$('#themeIconLight').style.display = isDark ? 'none' : 'block';
+    dom.$('#themeIconDark').style.display = isDark ? 'block' : 'none';
   });
 
   dom.viewSplit.addEventListener('click', ()=>setView('split'));
