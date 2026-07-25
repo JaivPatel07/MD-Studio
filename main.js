@@ -43,8 +43,8 @@ function initialize() {
   dom.themeToggle.addEventListener('click', ()=>{
     const cur = document.body.getAttribute('data-theme');
     document.body.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
-    const isDark = cur === 'light';
-    dom.themeToggle.textContent = isDark ? '◑' : '◐';
+    const isDark = cur === 'light'; // If current is light, new will be dark
+    dom.themeToggle.textContent = isDark ? 'Dark' : 'Light';
     dom.hljsLightTheme.disabled = isDark;
     dom.hljsDarkTheme.disabled = !isDark;
   });
