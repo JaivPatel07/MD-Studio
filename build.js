@@ -17,7 +17,7 @@ const filesToCopy = [
   'markdown-cheatsheet.html',
   'dom.js', // For static pages
   'theme.js', // For static pages
-  'ads.txt',
+  'Ads.txt',
 ];
 
 async function build() {
