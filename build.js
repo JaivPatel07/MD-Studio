@@ -10,7 +10,8 @@ const filesToCopy = [
   'README.md',
   'robots.txt',
   'sitemap.xml',
-  'favicon.svg'
+  'favicon.svg',
+  "googlea38b15686fc50c6a.html",
 ];
 
 async function build() {
