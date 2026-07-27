@@ -1,9 +1,7 @@
 import * as dom from './dom.js';
 import { state } from './state.js';
 import { setupMarked } from './utils.js';
-import { render, renderPreview, closeSidebarMobile } from './ui.js';
-import { load, newFile, scheduleSave } from './file-system.js';
-import { importFile, exportFile } from './import-export.js';
+import { render, renderPreview, closeSidebarMobile, showToast } from './ui.js';
 
 // --- Initial Setup ---
 
@@ -14,7 +12,7 @@ function setView(mode){
   if (mode === 'preview'){ dom.viewPreview.classList.add('on'); dom.editorPane.style.display='none'; dom.previewPane.style.display='block'; dom.previewPane.style.flex='1'; }
 }
 
-function initialize() {
+async function initialize() {
   // --- Global Event Listeners ---
   window.addEventListener('beforeunload', (e) => {
     if (state.isDirty) {
@@ -23,22 +21,43 @@ function initialize() {
     }
   });
 
+  const { scheduleSave, newFile, load } = await import('./file-system.js');
+
   // --- UI Event Listeners ---
   dom.titleInput.addEventListener('input', scheduleSave);
   dom.searchInput.addEventListener('input', render);
   dom.mdInput.addEventListener('input', ()=>{ renderPreview(); scheduleSave(); });
 
-  dom.newBtn.addEventListener('click', ()=>newFile());
-  dom.welcomeNew.addEventListener('click', ()=>newFile());
+  const handleNewFile = () => {
+    import('./file-system.js').then(({ newFile }) => newFile());
+  };
+  dom.newBtn.addEventListener('click', handleNewFile);
+  dom.welcomeNew.addEventListener('click', handleNewFile);
 
   dom.uploadBtn.addEventListener('click', ()=>dom.fileInput.click());
-  dom.fileInput.addEventListener('change', (e)=>{
+  dom.fileInput.addEventListener('change', async (e)=>{
     const list = Array.from(e.target.files || []);
-    list.forEach(file=> importFile(file));
+    if (list.length > 0) {
+      try {
+        const { importFile } = await import('./import-export.js');
+        list.forEach(file => importFile(file));
+      } catch (err) {
+        console.error("Failed to load import module", err);
+        showToast('Error loading import functionality.', 'error');
+      }
+    }
     e.target.value = '';
   });
 
-  dom.downloadBtn.addEventListener('click', exportFile);
+  dom.downloadBtn.addEventListener('click', async () => {
+    try {
+      const { exportFile } = await import('./import-export.js');
+      exportFile();
+    } catch (err) {
+      console.error("Failed to load export module", err);
+      showToast('Error loading export functionality.', 'error');
+    }
+  });
 
   dom.themeToggle.addEventListener('click', ()=>{
     const cur = document.body.getAttribute('data-theme');

@@ -10,18 +10,18 @@ A simple, private, and powerful Markdown editor that lives in your browser. Writ
 ---
 
 ## ✨ Features
-
-*   **Rich Markdown Editor**: Write in Markdown with a live preview panel.
-*   **Dual Themes**: Switch between a clean light theme and a focused dark theme.
-*   **Flexible Layouts**: Choose between split-screen, editor-only, or preview-only views.
-*   **Powerful Importer**: Import and automatically convert `.md`, `.txt`, `.docx`, and `.pdf` files to Markdown.
-*   **Export to Markdown**: Easily download your notes as standard `.md` files.
-*   **Privacy First**: All your notes are stored directly in your browser's local storage. Nothing is ever sent to a server.
-*   **Full-Text Search**: Instantly search through the titles and content of all your notes.
-*   **Code Syntax Highlighting**: Code blocks in the preview are automatically highlighted.
-*   **Note Statistics**: See your word count and when the note was last saved.
-*   **PWA Ready**: Installable on desktop and mobile for a native-app-like experience.
-*   **Deploy-Friendly**: Simple, static file structure ready for easy hosting.
+*   **Live Markdown Preview**: See your rendered document update in real-time as you type.
+*   **GitHub Flavored Markdown**: Write documentation, READMEs, and notes with GFM support.
+*   **Export to Markdown & PDF**: Download your work as `.md` files or export to PDF.
+*   **Import & Convert**: Automatically convert and edit `.md`, `.txt`, `.docx`, and `.pdf` files.
+*   **Syntax Highlighting**: Code blocks are automatically highlighted for readability.
+*   **Local-First Storage**: All data is saved in your browser for complete privacy. Nothing is sent to a server.
+*   **Dark & Light Themes**: Switch between themes for your preferred writing environment.
+*   **Full-Text Search**: Instantly find notes by title or content.
+*   **Autosave**: Your work is saved automatically, so you never lose changes.
+*   **Word & Character Count**: Keep track of your document's length with note statistics.
+*   **PWA Ready**: Install the app on your desktop or mobile device for an app-like experience.
+*   **Markdown Viewer**: Quickly open and view Markdown files from your computer.
 
 ## 🛠️ Tech Stack
 
@@ -64,4 +64,27 @@ To run this project locally:
 To create a minified, production-ready bundle, run:
 ```bash
 npm run build
+```
+
+```
+MD-Studio
+├─ build.js
+├─ bundle.js
+├─ deploy.yml
+├─ dom.js
+├─ file-system.js
+├─ import-export.js
+├─ index.html
+├─ main.js
+├─ manifest.json
+├─ markdown-notes.html
+├─ package-lock.json
+├─ package.json
+├─ README.md
+├─ script.js
+├─ state.js
+├─ style.css
+├─ ui.js
+└─ utils.js
+
 ```

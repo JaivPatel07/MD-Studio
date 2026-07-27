@@ -7,7 +7,10 @@ const filesToCopy = [
   'index.html',
   'style.css',
   'manifest.json',
-  'README.md'
+  'README.md',
+  'robots.txt',
+  'sitemap.xml',
+  'favicon.svg'
 ];
 
 async function build() {
@@ -16,7 +19,7 @@ async function build() {
     await fs.emptyDir(distFolder);
 
     console.log('Running esbuild...');
-    execSync('esbuild main.js --bundle --minify --outfile=dist/bundle.js', {
+    execSync('esbuild main.js --bundle --splitting --format=esm --outdir=dist --minify --tree-shaking=true --target=es2022', {
       stdio: 'inherit',
     });
 

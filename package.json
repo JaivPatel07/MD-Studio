@@ -4,7 +4,8 @@
   "description": "A simple Markdown workspace for creating, editing, and converting documents with ease.",
   "scripts": {
     "build": "node build.js",
-    "dev": "esbuild main.js --bundle --outfile=dist/bundle.js --watch"
+    "dev": "esbuild main.js --bundle --splitting --format=esm --outdir=dist --watch",
+    "analyze": "esbuild main.js --bundle --splitting --format=esm --metafile=meta.json --outdir=dist --minify --target=es2022"
   },
   "devDependencies": {
     "esbuild": "^0.20.0",

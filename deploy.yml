@@ -37,6 +37,11 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+      - name: Create .htaccess for caching
+        run: |
+          echo '<filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|webp|woff2|woff|ttf|svg)$">' > .htaccess
+          echo '  Header set Cache-Control "public, max-age=31536000, immutable"' >> .htaccess
+          echo '</filesMatch>'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
