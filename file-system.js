@@ -43,16 +43,20 @@ export function scheduleSave(){
   setSaveState('saving');
   state.isDirty = true;
   clearTimeout(state.saveTimer);
+
+  // Persist the changes immediately.
+  const f = state.activeFile;
+  if (f) {
+    f.name = dom.titleInput.value.trim() || 'Untitled';
+    f.content = dom.mdInput.value;
+    f.updatedAt = Date.now();
+    persist();
+  }
+
+  // Debounce less critical UI updates.
   state.saveTimer = setTimeout(()=>{
-    const f = state.activeFile;
-    if (f){
-      f.name = dom.titleInput.value.trim() || 'Untitled';
-      f.content = dom.mdInput.value;
-      f.updatedAt = Date.now();
-      persist();
-      updateNoteStats();
-      render();
-    }
+    updateNoteStats();
+    render();
   }, 400);
 }
 

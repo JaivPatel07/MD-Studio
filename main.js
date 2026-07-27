@@ -14,22 +14,31 @@ function setView(mode){
 
 async function initialize() {
   // --- Global Event Listeners ---
+  const { scheduleSave, newFile, load, persist } = await import('./file-system.js');
+
   window.addEventListener('beforeunload', (e) => {
     if (state.isDirty) {
-      e.preventDefault();
-      e.returnValue = '';
+      // Synchronously save any pending changes before the page unloads.
+      const f = state.activeFile;
+      if (f) {
+        f.name = dom.titleInput.value.trim() || 'Untitled';
+        f.content = dom.mdInput.value;
+        f.updatedAt = Date.now();
+        persist(); // This is a synchronous operation
+      }
     }
   });
 
   window.addEventListener('keydown', e => {
     if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
       e.preventDefault();
-      dom.findReplaceBar.style.display = 'flex';
-      dom.findInput.focus();
+      const isVisible = dom.findReplaceBar.style.display === 'flex';
+      dom.findReplaceBar.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) {
+        dom.findInput.focus();
+      }
     }
   });
-
-  const { scheduleSave, newFile, load } = await import('./file-system.js');
 
   // --- UI Event Listeners ---
   dom.titleInput.addEventListener('input', scheduleSave);
@@ -68,14 +77,20 @@ async function initialize() {
   });
 
   dom.themeToggle.addEventListener('click', ()=>{
-    const cur = document.body.getAttribute('data-theme');
-    document.body.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
-    const isDark = document.body.getAttribute('data-theme') === 'dark';
+    const currentTheme = document.body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+
+  function setTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+    const isDark = theme === 'dark';
     dom.hljsLightTheme.disabled = isDark;
     dom.hljsDarkTheme.disabled = !isDark;
     dom.$('#themeIconLight').style.display = isDark ? 'none' : 'block';
     dom.$('#themeIconDark').style.display = isDark ? 'block' : 'none';
-  });
+  }
 
   dom.viewSplit.addEventListener('click', ()=>setView('split'));
   dom.viewEdit.addEventListener('click', ()=>setView('edit'));
@@ -149,6 +164,10 @@ async function initialize() {
   // --- Load data and setup ---
   load();
   setupMarked();
+
+  // Restore theme from localStorage
+  const savedTheme = localStorage.getItem('theme') ?? 'light';
+  setTheme(savedTheme);
 }
 
 initialize();
