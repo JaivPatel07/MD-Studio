@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markdown to PDF Converter Online – MD Studio</title>
+<meta name="description" content="Convert your Markdown documents to PDF online for free with MD Studio. Export your notes, reports, and documentation to high-quality PDF files easily.">
+<meta name="theme-color" content="#FFFFFF">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Markdown to PDF Converter Online – MD Studio">
+<meta property="og:description" content="Convert your Markdown documents to PDF online for free with MD Studio. Export your notes, reports, and documentation to high-quality PDF files easily.">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Markdown to PDF Converter Online – MD Studio">
+<meta property="twitter:description" content="Convert your Markdown documents to PDF online for free with MD Studio. Export your notes, reports, and documentation to high-quality PDF files easily.">
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Markdown to PDF Converter Online",
+  "description": "Convert your Markdown documents to PDF online for free with MD Studio. Export your notes, reports, and documentation to high-quality PDF files easily.",
+  "url": "https://your-username.github.io/your-repository-name/markdown-to-pdf.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "MD Studio",
+    "url": "https://your-username.github.io/your-repository-name/"
+  }
+}
+</script>
+</head>
+<body data-theme="light">
+<div id="app">
+
+  <header>
+    <div class="brand">
+      <a href="/" class="brand-link">
+        <svg class="logo" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="30" height="30" rx="6" fill="var(--accent-primary)"/>
+          <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="bold" fill="white">MD</text>
+        </svg>
+        <h1>MD Studio</h1>
+      </a>
+    </div>
+    <div class="top-actions">
+      <button id="themeToggle" aria-label="Toggle theme">
+        <svg class="theme-icon" id="themeIconLight" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18.75a.75.75 0 01.75-.75zM5.106 17.834a.75.75 0 001.06 1.06l1.591-1.59a.75.75 0 00-1.06-1.061l-1.591 1.59zM3 12a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h2.25A.75.75 0 013 12zM6.166 5.106a.75.75 0 00-1.06 1.06l1.59 1.591a.75.75 0 001.061-1.06l-1.59-1.591z"></path></svg>
+        <svg class="theme-icon" id="themeIconDark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.463-.948a.75.75 0 01.98.641A11.25 11.25 0 0112 21a11.25 11.25 0 01-11.25-11.25 11.25 11.25 0 019.528-9.282z" clip-rule="evenodd"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="static-page-main">
+    <div class="static-page-content">
+      <h1>Convert Markdown to PDF Online for Free</h1>
+      <p>MD Studio offers a seamless way to transform your Markdown documents into professional-looking PDF files. Whether you're creating reports, documentation, or sharing your notes, our free online Markdown to PDF converter makes it easy to get a polished output.</p>
+
+      <h2>Why Convert Markdown to PDF?</h2>
+      <ul>
+        <li>**Professional Presentation:** PDFs are ideal for sharing documents that need to maintain their formatting across different devices and operating systems.</li>
+        <li>**Archiving:** PDFs are a stable format for long-term archiving of your important Markdown content.</li>
+        <li>**Printing:** Easily print your Markdown files with consistent layouts.</li>
+      </ul>
+
+      <h2>How to Export Markdown to PDF with MD Studio:</h2>
+      <ol>
+        <li>Open your Markdown document in the MD Studio editor.</li>
+        <li>Click the "Export" button in the top right corner.</li>
+        <li>Select "Export to PDF" from the options.</li>
+        <li>Your Markdown file will be converted and downloaded as a PDF.</li>
+      </ol>
+
+      <p>Start converting your Markdown to PDF today. It's fast, free, and works directly in your browser!</p>
+      <a href="/" class="btn btn-primary">Go to MD Studio Editor</a>
+    </div>
+  </main>
+</div>
+
+<script type="module">
+  // Basic theme toggle for static pages
+  import * as dom from './dom.js';
+
+  function setTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+    const isDark = theme === 'dark';
+    if (dom.hljsLightTheme) dom.hljsLightTheme.disabled = isDark;
+    if (dom.hljsDarkTheme) dom.hljsDarkTheme.disabled = !isDark;
+    if (dom.$('#themeIconLight')) dom.$('#themeIconLight').style.display = isDark ? 'none' : 'block';
+    if (dom.$('#themeIconDark')) dom.$('#themeIconDark').style.display = isDark ? 'block' : 'none';
+  }
+
+  dom.themeToggle.addEventListener('click', ()=>{
+    const currentTheme = document.body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+
+  const savedTheme = localStorage.getItem('theme') ?? 'light';
+  setTheme(savedTheme);
+</script>
+
+</body>
+</html>

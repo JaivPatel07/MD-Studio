@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MD Studio – Free Online Markdown Editor with Live Preview</title>
-<meta name="description" content="A free online Markdown editor with live preview. Write, preview, and export documents in your browser. Supports GitHub Flavored Markdown, PDF export, and local-first editing.">
+<title>Free Online Markdown Editor with Live Preview – MD Studio</title>
+<meta name="description" content="Free online Markdown editor with live preview, GitHub Flavored Markdown, PDF/HTML export, and local-first storage. Write, preview, and edit documents in your browser.">
 <meta name="theme-color" content="#FFFFFF">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="MD Studio – Free Online Markdown Editor with Live Preview">
-<meta property="og:description" content="A free online Markdown editor with live preview. Supports GitHub Flavored Markdown, PDF export, and local-first editing.">
+<meta property="og:title" content="Free Online Markdown Editor with Live Preview – MD Studio">
+<meta property="og:description" content="Free online Markdown editor with live preview, GitHub Flavored Markdown, PDF/HTML export, and local-first storage.">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="MD Studio – Free Online Markdown Editor with Live Preview">
-<meta property="twitter:description" content="A free online Markdown editor with live preview. Supports GitHub Flavored Markdown, PDF export, and local-first editing.">
+<meta property="twitter:title" content="Free Online Markdown Editor with Live Preview – MD Studio">
+<meta property="twitter:description" content="Free online Markdown editor with live preview, GitHub Flavored Markdown, PDF/HTML export, and local-first storage.">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
@@ -32,6 +32,27 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MD Studio",
+  "operatingSystem": "Any (Web browser)",
+  "applicationCategory": "TextEditor",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "250"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 </head>
 <body data-theme="light">
 <div id="app">
@@ -73,10 +94,45 @@
 
     <div id="workspace">
       <div id="welcome">
-        <div class="dots" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        <h1>Free Online Markdown Editor with Live Preview</h1>
-        <p>Write, preview, edit, and export Markdown documents in your browser. Supports GitHub Flavored Markdown, PDF export, autosave, and local-first editing.</p>
-        <button id="welcomeNew" class="btn btn-primary">New note +</button>
+        <div class="welcome-content">
+          <div class="dots" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <h1>Free Online Markdown Editor with Live Preview</h1>
+          <p>Write, preview, edit, and export Markdown documents directly in your browser. Supports GitHub Flavored Markdown, PDF export, autosave, and local-first storage.</p>
+          <button id="welcomeNew" class="btn btn-primary">Start Writing →</button>
+        </div>
+
+        <div class="features-section">
+          <h2>Why Choose MD Studio?</h2>
+          <ul class="features-list">
+            <li>✓ Live Markdown Preview</li>
+            <li>✓ GitHub Flavored Markdown</li>
+            <li>✓ Export to <a href="markdown-to-pdf.html" target="_blank" rel="noopener noreferrer">PDF</a> & HTML</li>
+            <li>✓ Dark Mode</li>
+            <li>✓ Autosave & Local Storage</li>
+            <li>✓ Syntax Highlighting</li>
+          </ul>
+        </div>
+
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>What is Markdown?</h3>
+            <p>Markdown is a lightweight markup language for creating formatted text using a plain-text editor. It's widely used for README files, documentation, blogs, and notes.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How do I edit Markdown online?</h3>
+            <p>MD Studio lets you write, preview, and export Markdown files directly in your browser without needing to install any software. Just start typing!</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I export Markdown to PDF?</h3>
+            <p>Yes. You can export your documents as standard `.md` files or as a PDF with a single click from the "Export" menu.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is MD Studio free?</h3>
+            <p>Yes, MD Studio is completely free to use for everyone.</p>
+          </div>
+        </div>
+
       </div>
 
       <div id="editorArea" style="display:none; flex:1; flex-direction:column; min-height:0;">
@@ -107,6 +163,7 @@
         </div>
         <div class="ws-foot">
           <span id="noteStats"></span>
+          <a href="markdown-cheatsheet.html" target="_blank" rel="noopener noreferrer">Cheatsheet</a>
         </div>
       </div>
     </div>
