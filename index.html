@@ -38,12 +38,16 @@
 
   <header>
     <div class="brand">
-      <button id="sidebarToggle" aria-label="Toggle file list">☰</button>
-      <svg class="logo" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="30" height="30" rx="6" fill="var(--accent-primary)"/>
-        <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="bold" fill="white">MD</text>
-      </svg>
-      <h1>MD Studio</h1>
+      <button id="sidebarToggle" aria-label="Toggle file list">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"></path></svg>
+      </button>
+      <a href="/" class="brand-link">
+        <svg class="logo" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="30" height="30" rx="6" fill="var(--accent-primary)"/>
+          <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="bold" fill="white">MD</text>
+        </svg>
+        <h1>MD Studio</h1>
+      </a>
     </div>
     <div class="top-actions">
       <button id="newBtn" class="btn"><span class="btn-label">New</span> +</button>
@@ -84,6 +88,18 @@
             <button id="viewPreview">preview</button>
           </div>
           <span class="save-state" id="saveState">saved</span>
+        </div>
+        <div id="findReplaceBar" class="find-replace-bar" style="display: none;">
+          <div class="find-group">
+            <input id="findInput" placeholder="Find" autocomplete="off">
+            <span id="findMatches">0/0</span>
+          </div>
+          <div class="find-group">
+            <input id="replaceInput" placeholder="Replace" autocomplete="off">
+          </div>
+          <button id="replaceBtn">Replace</button>
+          <button id="replaceAllBtn">All</button>
+          <button id="closeFindBtn" aria-label="Close find bar">×</button>
         </div>
         <div class="panes">
           <div id="editorPane"><textarea id="mdInput" placeholder="# Start writing…" spellcheck="false"></textarea></div>

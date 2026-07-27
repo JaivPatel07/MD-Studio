@@ -21,6 +21,14 @@ async function initialize() {
     }
   });
 
+  window.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+      e.preventDefault();
+      dom.findReplaceBar.style.display = 'flex';
+      dom.findInput.focus();
+    }
+  });
+
   const { scheduleSave, newFile, load } = await import('./file-system.js');
 
   // --- UI Event Listeners ---
@@ -77,6 +85,66 @@ async function initialize() {
     dom.sidebarToggle.addEventListener('click', ()=>{ dom.sidebar.classList.add('open'); dom.scrim.classList.add('show'); });
   }
   dom.scrim.addEventListener('click', closeSidebarMobile);
+
+  // --- Find & Replace Logic ---
+  let findMatches = [];
+  let currentMatchIndex = -1;
+
+  const findInEditor = () => {
+    const query = dom.findInput.value;
+    if (!query) {
+      findMatches = [];
+      currentMatchIndex = -1;
+      dom.findMatches.textContent = '0/0';
+      return;
+    }
+    const text = dom.mdInput.value;
+    const regex = new RegExp(query, 'gi');
+    findMatches = [...text.matchAll(regex)];
+    dom.findMatches.textContent = `0/${findMatches.length}`;
+    if (findMatches.length > 0) {
+      currentMatchIndex = -1;
+      findNext();
+    }
+  };
+
+  const findNext = () => {
+    if (!findMatches.length) return;
+    currentMatchIndex = (currentMatchIndex + 1) % findMatches.length;
+    const match = findMatches[currentMatchIndex];
+    dom.mdInput.focus();
+    dom.mdInput.setSelectionRange(match.index, match.index + match[0].length);
+    dom.findMatches.textContent = `${currentMatchIndex + 1}/${findMatches.length}`;
+  };
+
+  const replace = () => {
+    if (currentMatchIndex === -1 || !findMatches.length) return;
+    const match = findMatches[currentMatchIndex];
+    const replacement = dom.replaceInput.value;
+    if (dom.mdInput.selectionStart === match.index && dom.mdInput.selectionEnd === match.index + match[0].length) {
+      dom.mdInput.setRangeText(replacement, match.index, match.index + match[0].length, 'end');
+      renderPreview();
+      scheduleSave();
+      findInEditor(); // Re-run find to update matches
+    }
+  };
+
+  const replaceAll = () => {
+    const query = dom.findInput.value;
+    if (!query) return;
+    const replacement = dom.replaceInput.value;
+    const regex = new RegExp(query, 'gi');
+    dom.mdInput.value = dom.mdInput.value.replace(regex, replacement);
+    renderPreview();
+    scheduleSave();
+    findInEditor(); // Re-run find to clear matches
+  };
+
+  dom.findInput.addEventListener('input', findInEditor);
+  dom.findInput.addEventListener('keydown', e => { if (e.key === 'Enter') findNext(); });
+  dom.replaceBtn.addEventListener('click', replace);
+  dom.replaceAllBtn.addEventListener('click', replaceAll);
+  dom.closeFindBtn.addEventListener('click', () => { dom.findReplaceBar.style.display = 'none'; });
 
   // --- Load data and setup ---
   load();

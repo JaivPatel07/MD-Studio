@@ -27,3 +27,11 @@ export const viewSplit = $('#viewSplit');
 export const viewEdit = $('#viewEdit');
 export const viewPreview = $('#viewPreview');
 export const sidebarToggle = $('#sidebarToggle');
+
+export const findReplaceBar = $('#findReplaceBar');
+export const findInput = $('#findInput');
+export const replaceInput = $('#replaceInput');
+export const findMatches = $('#findMatches');
+export const replaceBtn = $('#replaceBtn');
+export const replaceAllBtn = $('#replaceAllBtn');
+export const closeFindBtn = $('#closeFindBtn');
