@@ -1,8 +1,9 @@
 const fs = require('fs-extra');
 const { execSync } = require('child_process');
+const packageJson = require('./package.json');
 
 const distFolder = 'dist';
-const baseUrl = 'https://your-username.github.io/your-repository-name'; // TODO: Replace with your actual domain
+const baseUrl = packageJson.homepage;
 
 const filesToCopy = [
   'index.html',
@@ -14,6 +15,8 @@ const filesToCopy = [
   "googlea38b15686fc50c6a.html",
   'markdown-to-pdf.html',
   'markdown-cheatsheet.html',
+  'dom.js', // For static pages
+  'theme.js', // For static pages
 ];
 
 async function build() {

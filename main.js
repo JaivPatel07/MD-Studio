@@ -2,6 +2,7 @@ import * as dom from './dom.js';
 import { state } from './state.js';
 import { setupMarked } from './utils.js';
 import { render, renderPreview, closeSidebarMobile, showToast } from './ui.js';
+import { initializeTheme } from './theme.js';
 
 // --- Initial Setup ---
 
@@ -76,21 +77,7 @@ async function initialize() {
     }
   });
 
-  dom.themeToggle.addEventListener('click', ()=>{
-    const currentTheme = document.body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-  });
-
-  function setTheme(theme) {
-    document.body.setAttribute('data-theme', theme);
-    const isDark = theme === 'dark';
-    dom.hljsLightTheme.disabled = isDark;
-    dom.hljsDarkTheme.disabled = !isDark;
-    dom.$('#themeIconLight').style.display = isDark ? 'none' : 'block';
-    dom.$('#themeIconDark').style.display = isDark ? 'block' : 'none';
-  }
+  initializeTheme();
 
   dom.viewSplit.addEventListener('click', ()=>setView('split'));
   dom.viewEdit.addEventListener('click', ()=>setView('edit'));
@@ -164,10 +151,6 @@ async function initialize() {
   // --- Load data and setup ---
   load();
   setupMarked();
-
-  // Restore theme from localStorage
-  const savedTheme = localStorage.getItem('theme') ?? 'light';
-  setTheme(savedTheme);
 }
 
 initialize();

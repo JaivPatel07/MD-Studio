@@ -9,16 +9,24 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html">
 <meta property="og:title" content="Markdown Cheatsheet – MD Studio">
 <meta property="og:description" content="A quick reference guide to the most common Markdown syntax. Learn how to use headings, bold, italics, lists, links, images, and more.">
+<meta property="og:image" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/favicon.svg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html">
 <meta property="twitter:title" content="Markdown Cheatsheet – MD Studio">
 <meta property="twitter:description" content="A quick reference guide to the most common Markdown syntax. Learn how to use headings, bold, italics, lists, links, images, and more.">
+<meta property="twitter:image" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/favicon.svg">
 
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hljs-light-theme">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" id="hljs-dark-theme" disabled>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <link rel="stylesheet" href="style.css">
 
 <!-- Structured Data (Schema.org) -->
@@ -28,11 +36,11 @@
   "@type": "WebPage",
   "name": "Markdown Cheatsheet",
   "description": "A quick reference guide to the most common Markdown syntax.",
-  "url": "https://your-username.github.io/your-repository-name/markdown-cheatsheet.html",
+  "url": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html",
   "isPartOf": {
     "@type": "WebSite",
     "name": "MD Studio",
-    "url": "https://your-username.github.io/your-repository-name/"
+    "url": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/"
   }
 }
 </script>
@@ -112,28 +120,8 @@ function hello() {
 </div>
 
 <script type="module">
-  // Basic theme toggle for static pages
-  import * as dom from './dom.js';
-
-  function setTheme(theme) {
-    document.body.setAttribute('data-theme', theme);
-    const isDark = theme === 'dark';
-    if (dom.$('#themeIconLight')) dom.$('#themeIconLight').style.display = isDark ? 'none' : 'block';
-    if (dom.$('#themeIconDark')) dom.$('#themeIconDark').style.display = isDark ? 'block' : 'none';
-  }
-
-  const themeToggle = document.getElementById('themeToggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', ()=>{
-      const currentTheme = document.body.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      setTheme(newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-  }
-
-  const savedTheme = localStorage.getItem('theme') ?? 'light';
-  setTheme(savedTheme);
+  import { initializeTheme } from './theme.js';
+  initializeTheme();
 </script>
 
 </body>
