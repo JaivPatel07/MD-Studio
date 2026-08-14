@@ -1,0 +1,8 @@
+{
+  "name": "MD Studio",
+  "description": "Modern local-first Markdown editor with live synchronized preview, LaTeX formulas, starter templates, export to PDF/HTML/Markdown, outline navigator, and distraction-free Zen mode.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

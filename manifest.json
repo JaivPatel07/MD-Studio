@@ -1,16 +1,37 @@
 {
-  "name": "MD Studio",
+  "name": "MD Studio — Free Online Markdown Editor",
   "short_name": "MD Studio",
-  "description": "A simple and private Markdown editor in your browser. Write, convert, and manage notes from .md, .docx, and .pdf files.",
-  "start_url": ".",
+  "description": "Free online Markdown editor with live preview, GitHub Flavored Markdown, LaTeX math formulas, PDF/HTML export, starter templates, and offline storage.",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#FBFAF7",
-  "theme_color": "#FFFFFF",
+  "theme_color": "#2A55E5",
+  "categories": ["productivity", "utilities", "developer tools"],
   "icons": [
     {
       "src": "favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Document",
+      "url": "/",
+      "description": "Start writing a new Markdown note"
+    },
+    {
+      "name": "Markdown Cheatsheet",
+      "url": "/markdown-cheatsheet.html",
+      "description": "Markdown syntax quick reference guide"
+    },
+    {
+      "name": "Convert to PDF",
+      "url": "/markdown-to-pdf.html",
+      "description": "Convert Markdown documents to PDF"
     }
   ]
 }

@@ -1,9 +1,9 @@
 const fs = require('fs-extra');
-const { execSync } = require('child_process');
+const esbuild = require('esbuild');
 const packageJson = require('./package.json');
 
 const distFolder = 'dist';
-const baseUrl = packageJson.homepage;
+const baseUrl = packageJson.homepage || 'https://mdstudio.app';
 
 const filesToCopy = [
   'index.html',
@@ -12,9 +12,10 @@ const filesToCopy = [
   'README.md',
   'robots.txt',
   'favicon.svg',
-  "googlea38b15686fc50c6a.html",
+  'googlea38b15686fc50c6a.html',
   'markdown-to-pdf.html',
   'markdown-cheatsheet.html',
+  'markdown-notes.html',
   'dom.js', // For static pages
   'theme.js', // For static pages
   'ads.txt',
@@ -26,8 +27,15 @@ async function build() {
     await fs.emptyDir(distFolder);
 
     console.log('Running esbuild...');
-    execSync('esbuild main.js --bundle --splitting --format=esm --outdir=dist --minify --tree-shaking=true --target=es2022', {
-      stdio: 'inherit',
+    await esbuild.build({
+      entryPoints: ['main.js'],
+      bundle: true,
+      splitting: true,
+      format: 'esm',
+      outdir: distFolder,
+      minify: true,
+      treeShaking: true,
+      target: 'es2022',
     });
 
     console.log('Copying static assets...');

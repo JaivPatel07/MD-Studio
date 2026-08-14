@@ -3,45 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Markdown Cheatsheet – MD Studio</title>
-<meta name="description" content="A quick reference guide to the most common Markdown syntax. Learn how to use headings, bold, italics, lists, links, images, and more with this cheatsheet.">
-<meta name="theme-color" content="#FFFFFF">
+<title>Markdown Cheatsheet & Syntax Guide – MD Studio</title>
+<meta name="description" content="Complete Markdown cheatsheet and syntax reference guide. Learn headings, bold, italics, tables, task lists, code blocks, and LaTeX math formatting with interactive examples.">
+<meta name="keywords" content="markdown cheatsheet, markdown syntax, markdown guide, learn markdown, markdown table syntax, markdown code block, markdown math latex, markdown task list">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="MD Studio">
+<meta name="theme-color" content="#2A55E5">
+
+<link rel="canonical" href="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MD Studio">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html">
-<meta property="og:title" content="Markdown Cheatsheet – MD Studio">
-<meta property="og:description" content="A quick reference guide to the most common Markdown syntax. Learn how to use headings, bold, italics, lists, links, images, and more.">
+<meta property="og:title" content="Markdown Cheatsheet & Syntax Guide – MD Studio">
+<meta property="og:description" content="Quick reference and complete syntax guide for standard Markdown and GitHub Flavored Markdown (GFM).">
 <meta property="og:image" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/favicon.svg">
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html">
-<meta property="twitter:title" content="Markdown Cheatsheet – MD Studio">
-<meta property="twitter:description" content="A quick reference guide to the most common Markdown syntax. Learn how to use headings, bold, italics, lists, links, images, and more.">
-<meta property="twitter:image" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/favicon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html">
+<meta name="twitter:title" content="Markdown Cheatsheet & Syntax Guide – MD Studio">
+<meta name="twitter:description" content="Quick reference and complete syntax guide for standard Markdown and GitHub Flavored Markdown (GFM).">
+<meta name="twitter:image" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/favicon.svg">
 
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="canonical" href="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hljs-light-theme">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" id="hljs-dark-theme" disabled>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<link rel="apple-touch-icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 
 <!-- Structured Data (Schema.org) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Markdown Cheatsheet",
-  "description": "A quick reference guide to the most common Markdown syntax.",
-  "url": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "MD Studio",
-    "url": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/"
-  }
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Markdown Cheatsheet and Complete Syntax Guide",
+      "description": "Comprehensive reference guide covering Markdown syntax, GitHub Flavored Markdown, tables, code blocks, task lists, and KaTeX math formulas.",
+      "url": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html",
+      "author": {
+        "@type": "Organization",
+        "name": "MD Studio"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MD Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/favicon.svg"
+        }
+      },
+      "mainEntityOfPage": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Markdown Cheatsheet",
+          "item": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html"
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -59,6 +92,7 @@
       </a>
     </div>
     <div class="top-actions">
+      <a href="/" class="btn btn-primary">Open Editor →</a>
       <button id="themeToggle" aria-label="Toggle theme">
         <svg class="theme-icon" id="themeIconLight" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18.75a.75.75 0 01.75-.75zM5.106 17.834a.75.75 0 001.06 1.06l1.591-1.59a.75.75 0 00-1.06-1.061l-1.591 1.59zM3 12a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h2.25A.75.75 0 013 12zM6.166 5.106a.75.75 0 00-1.06 1.06l1.59 1.591a.75.75 0 001.061-1.06l-1.59-1.591z"></path></svg>
         <svg class="theme-icon" id="themeIconDark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.463-.948a.75.75 0 01.98.641A11.25 11.25 0 0112 21a11.25 11.25 0 01-11.25-11.25 11.25 11.25 0 019.528-9.282z" clip-rule="evenodd"></path></svg>
@@ -67,54 +101,84 @@
   </header>
 
   <main class="static-page-main">
-    <div class="static-page-content">
-      <h1>Markdown Cheatsheet</h1>
-      <p>A quick reference for the most common Markdown syntax elements. Use our <a href="/">online Markdown editor</a> to practice.</p>
+    <div class="static-page-content prose">
+      <h1>Markdown Cheatsheet & Syntax Reference</h1>
+      <p>This reference guide details all essential Markdown elements, GitHub Flavored Markdown extensions, tables, task lists, and mathematical formulas supported by <a href="/">MD Studio</a>.</p>
 
-      <h2>Headings</h2>
-      <pre><code># Heading 1
-## Heading 2
-### Heading 3</code></pre>
+      <h2>1. Headings</h2>
+      <pre><code># Heading 1 (Page Title)
+## Heading 2 (Major Section)
+### Heading 3 (Sub-section)
+#### Heading 4
+##### Heading 5
+###### Heading 6</code></pre>
 
-      <h2>Text Styles</h2>
-      <pre><code>*Italic text* or _Italic text_
-**Bold text** or __Bold text__
-~~Strikethrough~~</code></pre>
+      <h2>2. Text Emphasis</h2>
+      <pre><code>**Bold Text** or __Bold Text__
+*Italic Text* or _Italic Text_
+***Bold and Italic***
+~~Strikethrough Text~~
+`Inline code snippet`</code></pre>
 
-      <h2>Blockquotes</h2>
-      <pre><code>> This is a blockquote.</code></pre>
+      <h2>3. Lists & Task Checkboxes</h2>
+      <h3>Bullet (Unordered) Lists</h3>
+      <pre><code>- Item Alpha
+- Item Beta
+  - Nested sub-item
+  - Nested sub-item
+- Item Gamma</code></pre>
 
-      <h2>Lists</h2>
-      <h3>Unordered List</h3>
-      <pre><code>- Item 1
-- Item 2
-  - Sub-item</code></pre>
-      <h3>Ordered List</h3>
-      <pre><code>1. First item
-2. Second item
-3. Third item</code></pre>
+      <h3>Numbered (Ordered) Lists</h3>
+      <pre><code>1. First step
+2. Second step
+3. Third step</code></pre>
 
-      <h2>Code</h2>
-      <h3>Inline Code</h3>
-      <pre><code>Use `code` in your sentences.</code></pre>
-      <h3>Code Block</h3>
+      <h3>Interactive Task Lists (GFM)</h3>
+      <pre><code>- [x] Completed task item
+- [ ] Pending task item
+- [ ] Research documentation</code></pre>
+
+      <h2>4. Links and Images</h2>
+      <pre><code>[Link Text](https://example.com)
+[Link with Title](https://example.com "Hover Title")
+![Image Description](https://via.placeholder.com/600x300.png "Alt preview")</code></pre>
+
+      <h2>5. Blockquotes</h2>
+      <pre><code>> Markdown is a lightweight markup language designed for plain-text readability.
+> 
+> Multiple paragraphs can be quoted with repeated arrows.</code></pre>
+
+      <h2>6. Code Blocks & Syntax Highlighting</h2>
       <pre><code>```javascript
-function hello() {
-  console.log("Hello, world!");
+function calculateSum(a, b) {
+  return a + b;
 }
+console.log(calculateSum(10, 20));
 ```</code></pre>
 
-      <h2>Links & Images</h2>
-      <pre><code>MD Studio
-!alt text</code></pre>
+      <h2>7. Tables (GFM)</h2>
+      <pre><code>| Feature | Status | Compatibility |
+| :--- | :---: | ---: |
+| Live Preview | Active | All Browsers |
+| LaTeX Math | Supported | KaTeX |
+| PDF Export | Ready | Client-side |</code></pre>
 
-      <h2>Tables</h2>
-      <pre><code>| Header 1 | Header 2 |
-|----------|----------|
-| Cell 1   | Cell 2   |
-| Cell 3   | Cell 4   |</code></pre>
+      <h2>8. Mathematical Equations (LaTeX / KaTeX)</h2>
+      <pre><code>Inline formula: $E = mc^2$
 
-      <a href="/" class="btn btn-primary">Open Editor and Start Writing</a>
+Block equation:
+$$f(x) = \int_{-\infty}^\infty \hat{f}(\xi)\,e^{2 \pi i \xi x}\,d\xi$$</code></pre>
+
+      <h2>9. Horizontal Rules</h2>
+      <pre><code>---
+***
+___</code></pre>
+
+      <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="/" class="btn btn-primary">Open MD Studio Editor</a>
+        <a href="/markdown-to-pdf.html" class="btn">PDF Export Guide</a>
+        <a href="/markdown-notes.html" class="btn">Notes Management Guide</a>
+      </div>
     </div>
   </main>
 </div>
@@ -123,9 +187,6 @@ function hello() {
   import { initializeTheme } from './theme.js';
   initializeTheme();
 </script>
-
-</body>
-</html>
 
 </body>
 </html>

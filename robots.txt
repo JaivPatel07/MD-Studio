@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/sitemap.xml

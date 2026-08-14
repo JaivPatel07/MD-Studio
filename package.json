@@ -2,13 +2,16 @@
   "name": "md-studio",
   "version": "1.0.0",
   "description": "A simple Markdown workspace for creating, editing, and converting documents with ease.",
+  "homepage": "https://mdstudio.app",
   "scripts": {
     "build": "node build.js",
-    "dev": "esbuild main.js --bundle --splitting --format=esm --outdir=dist --watch",
+    "dev": "node server.js",
+    "start": "node server.js",
     "analyze": "esbuild main.js --bundle --splitting --format=esm --metafile=meta.json --outdir=dist --minify --target=es2022"
   },
-  "devDependencies": {
+  "dependencies": {
     "esbuild": "^0.20.0",
+    "express": "^5.2.1",
     "fs-extra": "^11.2.0"
   }
 }
