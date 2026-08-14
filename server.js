@@ -27,15 +27,18 @@ app.use((req, res) => {
     return res.sendFile(rootFile);
   }
 
-  // Try appending .html (e.g. /markdown-cheatsheet -> /markdown-cheatsheet.html)
+  // Try appending .html (e.g. /markdown-cheatsheet -> /src/pages/markdown-cheatsheet.html)
   if (!path.extname(reqPath)) {
-    const htmlDistFile = path.join(distDir, `${reqPath}.html`);
-    if (fs.existsSync(htmlDistFile) && fs.statSync(htmlDistFile).isFile()) {
-      return res.sendFile(htmlDistFile);
-    }
-    const htmlRootFile = path.join(__dirname, `${reqPath}.html`);
-    if (fs.existsSync(htmlRootFile) && fs.statSync(htmlRootFile).isFile()) {
-      return res.sendFile(htmlRootFile);
+    const pagesPaths = [
+      path.join(distDir, `${reqPath}.html`),
+      path.join(__dirname, `${reqPath}.html`),
+      path.join(distDir, 'src', 'pages', `${reqPath}.html`),
+      path.join(__dirname, 'src', 'pages', `${reqPath}.html`)
+    ];
+    for (const p of pagesPaths) {
+      if (fs.existsSync(p) && fs.statSync(p).isFile()) {
+        return res.sendFile(p);
+      }
     }
   }
   

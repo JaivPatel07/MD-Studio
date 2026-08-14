@@ -7,7 +7,7 @@
     "build": "node build.js",
     "dev": "node server.js",
     "start": "node server.js",
-    "analyze": "esbuild main.js --bundle --splitting --format=esm --metafile=meta.json --outdir=dist --minify --target=es2022"
+    "analyze": "esbuild src/js/main.js --bundle --splitting --format=esm --metafile=meta.json --outdir=dist/src/js --minify --target=es2022"
   },
   "dependencies": {
     "esbuild": "^0.20.0",

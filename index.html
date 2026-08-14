@@ -24,7 +24,7 @@
 <meta property="og:url" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/">
 <meta property="og:title" content="Free Online Markdown Editor with Live Preview – MD Studio">
 <meta property="og:description" content="Write, preview, and export Markdown in your browser. Supports GitHub Flavored Markdown, LaTeX math, PDF/HTML export, templates, and 100% private offline storage.">
-<meta property="og:image" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/favicon.svg">
+<meta property="og:image" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/public/favicon.svg">
 <meta property="og:image:alt" content="MD Studio Online Markdown Editor Logo">
 
 <!-- Twitter -->
@@ -32,7 +32,7 @@
 <meta name="twitter:url" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/">
 <meta name="twitter:title" content="Free Online Markdown Editor with Live Preview – MD Studio">
 <meta name="twitter:description" content="Write, preview, and export Markdown in your browser. Supports GitHub Flavored Markdown, LaTeX math, PDF/HTML export, templates, and 100% private offline storage.">
-<meta name="twitter:image" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/favicon.svg">
+<meta name="twitter:image" content="https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/public/favicon.svg">
 <meta name="twitter:image:alt" content="MD Studio Online Markdown Editor Logo">
 
 <meta name="google-adsense-account" content="ca-pub-8604563877949748">
@@ -53,10 +53,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hljs-light-theme">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" id="hljs-dark-theme" disabled>
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="favicon.svg">
-<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="public/manifest.json">
+<link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="public/favicon.svg">
+<link rel="stylesheet" href="src/css/style.css">
 
 <!-- Comprehensive Schema.org JSON-LD Structured Data for Rich Snippets -->
 <script type="application/ld+json">
@@ -157,19 +157,19 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Markdown Cheatsheet",
-          "item": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-cheatsheet.html"
+          "item": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/src/pages/markdown-cheatsheet.html"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Markdown to PDF Converter",
-          "item": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-to-pdf.html"
+          "item": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/src/pages/markdown-to-pdf.html"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Markdown Notes Guide",
-          "item": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/markdown-notes.html"
+          "item": "https://md-studio-bdfwuc7js-jaivpatel07s-projects.vercel.app/src/pages/markdown-notes.html"
         }
       ]
     }
@@ -322,7 +322,7 @@
             <li>✓ Live Split & Synchronized Preview</li>
             <li>✓ GitHub Flavored Markdown & Task Lists</li>
             <li>✓ LaTeX / KaTeX Mathematical Formulas</li>
-            <li>✓ Export to <a href="markdown-to-pdf.html" target="_blank" rel="noopener noreferrer">PDF</a>, HTML, & Text</li>
+            <li>✓ Export to <a href="src/pages/markdown-to-pdf.html" target="_blank" rel="noopener noreferrer">PDF</a>, HTML, & Text</li>
             <li>✓ One-Click Code Block Copy</li>
             <li>✓ Distraction-Free Zen Mode</li>
             <li>✓ Autosave & 100% Offline Storage</li>
@@ -462,9 +462,9 @@
         <div class="ws-foot">
           <div id="noteStats" class="note-stats-bar"></div>
           <div class="foot-links">
-            <a href="markdown-cheatsheet.html" target="_blank" rel="noopener noreferrer">Cheatsheet</a>
-            <a href="markdown-to-pdf.html" target="_blank" rel="noopener noreferrer">PDF Guide</a>
-            <a href="markdown-notes.html" target="_blank" rel="noopener noreferrer">Notes Guide</a>
+            <a href="src/pages/markdown-cheatsheet.html" target="_blank" rel="noopener noreferrer">Cheatsheet</a>
+            <a href="src/pages/markdown-to-pdf.html" target="_blank" rel="noopener noreferrer">PDF Guide</a>
+            <a href="src/pages/markdown-notes.html" target="_blank" rel="noopener noreferrer">Notes Guide</a>
           </div>
         </div>
       </div>
@@ -515,7 +515,7 @@
   </div>
 </div>
 
-<script type="module" src="./main.js"></script>
+<script type="module" src="./src/js/main.js"></script>
 
 <div id="toastContainer"></div>
 </body>

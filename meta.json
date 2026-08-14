@@ -1,0 +1,196 @@
+{
+  "inputs": {
+    "src/js/dom.js": {
+      "bytes": 3426,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/js/state.js": {
+      "bytes": 1221,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/js/utils.js": {
+      "bytes": 9366,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/js/file-system.js": {
+      "bytes": 6999,
+      "imports": [
+        {
+          "path": "src/js/dom.js",
+          "kind": "import-statement",
+          "original": "./dom.js"
+        },
+        {
+          "path": "src/js/state.js",
+          "kind": "import-statement",
+          "original": "./state.js"
+        },
+        {
+          "path": "src/js/utils.js",
+          "kind": "import-statement",
+          "original": "./utils.js"
+        },
+        {
+          "path": "src/js/ui.js",
+          "kind": "import-statement",
+          "original": "./ui.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/js/ui.js": {
+      "bytes": 18300,
+      "imports": [
+        {
+          "path": "src/js/dom.js",
+          "kind": "import-statement",
+          "original": "./dom.js"
+        },
+        {
+          "path": "src/js/state.js",
+          "kind": "import-statement",
+          "original": "./state.js"
+        },
+        {
+          "path": "src/js/utils.js",
+          "kind": "import-statement",
+          "original": "./utils.js"
+        },
+        {
+          "path": "src/js/file-system.js",
+          "kind": "import-statement",
+          "original": "./file-system.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/js/theme.js": {
+      "bytes": 859,
+      "imports": [
+        {
+          "path": "src/js/dom.js",
+          "kind": "import-statement",
+          "original": "./dom.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/js/templates.js": {
+      "bytes": 8031,
+      "imports": [],
+      "format": "esm"
+    },
+    "src/js/import-export.js": {
+      "bytes": 10268,
+      "imports": [
+        {
+          "path": "src/js/state.js",
+          "kind": "import-statement",
+          "original": "./state.js"
+        },
+        {
+          "path": "src/js/utils.js",
+          "kind": "import-statement",
+          "original": "./utils.js"
+        },
+        {
+          "path": "src/js/ui.js",
+          "kind": "import-statement",
+          "original": "./ui.js"
+        },
+        {
+          "path": "src/js/file-system.js",
+          "kind": "import-statement",
+          "original": "./file-system.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/js/main.js": {
+      "bytes": 19454,
+      "imports": [
+        {
+          "path": "src/js/dom.js",
+          "kind": "import-statement",
+          "original": "./dom.js"
+        },
+        {
+          "path": "src/js/state.js",
+          "kind": "import-statement",
+          "original": "./state.js"
+        },
+        {
+          "path": "src/js/utils.js",
+          "kind": "import-statement",
+          "original": "./utils.js"
+        },
+        {
+          "path": "src/js/ui.js",
+          "kind": "import-statement",
+          "original": "./ui.js"
+        },
+        {
+          "path": "src/js/theme.js",
+          "kind": "import-statement",
+          "original": "./theme.js"
+        },
+        {
+          "path": "src/js/templates.js",
+          "kind": "import-statement",
+          "original": "./templates.js"
+        },
+        {
+          "path": "src/js/file-system.js",
+          "kind": "import-statement",
+          "original": "./file-system.js"
+        },
+        {
+          "path": "src/js/import-export.js",
+          "kind": "import-statement",
+          "original": "./import-export.js"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "dist/src/js/main.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "src/js/main.js",
+      "inputs": {
+        "src/js/dom.js": {
+          "bytesInOutput": 1531
+        },
+        "src/js/state.js": {
+          "bytesInOutput": 657
+        },
+        "src/js/utils.js": {
+          "bytesInOutput": 4850
+        },
+        "src/js/file-system.js": {
+          "bytesInOutput": 3594
+        },
+        "src/js/ui.js": {
+          "bytesInOutput": 11394
+        },
+        "src/js/theme.js": {
+          "bytesInOutput": 450
+        },
+        "src/js/templates.js": {
+          "bytesInOutput": 7722
+        },
+        "src/js/import-export.js": {
+          "bytesInOutput": 6907
+        },
+        "src/js/main.js": {
+          "bytesInOutput": 8373
+        }
+      },
+      "bytes": 45479
+    }
+  }
+}
