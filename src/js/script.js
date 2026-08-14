@@ -355,7 +355,7 @@
 
   $('#downloadBtn').addEventListener('click', ()=>{
     const f = files.find(x=>x.id===activeId);
-    if (!f){ alert('Open a note first to export it.'); return; }
+    if (!f){ showToast('Open a note first to export it.', 'error'); return; }
     const blob = new Blob([f.content], {type:'text/markdown'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
